@@ -1,0 +1,141 @@
+2023-Nov-13 23:08:30 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - Starting DemoLoggingUsingDefaultLoggerApplication using Java 17.0.8.1 on LAPTOP-MDQPDAAT with PID 24552 (C:\Users\Shailee Kumari\Documents\workspace-spring-tool-suite-4-4.20.0.RELEASE\Demo_LoggingUsingDefaultLogger\target\classes started by Shailee Kumari in C:\Users\Shailee Kumari\Documents\workspace-spring-tool-suite-4-4.20.0.RELEASE\Demo_LoggingUsingDefaultLogger)
+2023-Nov-13 23:08:30 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - No active profile set, falling back to 1 default profile: "default"
+2023-Nov-13 23:08:31 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - Started DemoLoggingUsingDefaultLoggerApplication in 1.1 seconds (JVM running for 2.059)
+2023-Nov-13 23:09:06 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - Starting DemoLoggingUsingDefaultLoggerApplication using Java 17.0.8.1 on LAPTOP-MDQPDAAT with PID 24908 (C:\Users\Shailee Kumari\Documents\workspace-spring-tool-suite-4-4.20.0.RELEASE\Demo_LoggingUsingDefaultLogger\target\classes started by Shailee Kumari in C:\Users\Shailee Kumari\Documents\workspace-spring-tool-suite-4-4.20.0.RELEASE\Demo_LoggingUsingDefaultLogger)
+2023-Nov-13 23:09:07 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - No active profile set, falling back to 1 default profile: "default"
+2023-Nov-13 23:09:07 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - Started DemoLoggingUsingDefaultLoggerApplication in 0.866 seconds (JVM running for 1.626)
+2023-Nov-13 23:09:25 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - Starting DemoLoggingUsingDefaultLoggerApplication using Java 17.0.8.1 on LAPTOP-MDQPDAAT with PID 24856 (C:\Users\Shailee Kumari\Documents\workspace-spring-tool-suite-4-4.20.0.RELEASE\Demo_LoggingUsingDefaultLogger\target\classes started by Shailee Kumari in C:\Users\Shailee Kumari\Documents\workspace-spring-tool-suite-4-4.20.0.RELEASE\Demo_LoggingUsingDefaultLogger)
+2023-Nov-13 23:09:25 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - No active profile set, falling back to 1 default profile: "default"
+2023-Nov-13 23:09:26 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - Started DemoLoggingUsingDefaultLoggerApplication in 0.873 seconds (JVM running for 1.639)
+2023-Nov-13 23:09:26 pm [main] ERROR com.infy.bean.Customer - Customer not registered
+com.infy.exception.InfyTelException: Customer not registered
+	at com.infy.bean.Customer.register(Customer.java:23)
+	at com.infy.DemoLoggingUsingDefaultLoggerApplication.main(DemoLoggingUsingDefaultLoggerApplication.java:24)
+2023-Nov-13 23:09:26 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - Sorry! Some exception occured ! Please chek log file
+2023-Nov-13 23:11:46 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - Starting DemoLoggingUsingDefaultLoggerApplication using Java 17.0.8.1 on LAPTOP-MDQPDAAT with PID 9316 (C:\Users\Shailee Kumari\Documents\workspace-spring-tool-suite-4-4.20.0.RELEASE\Demo_LoggingUsingDefaultLogger\target\classes started by Shailee Kumari in C:\Users\Shailee Kumari\Documents\workspace-spring-tool-suite-4-4.20.0.RELEASE\Demo_LoggingUsingDefaultLogger)
+2023-Nov-13 23:11:46 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - No active profile set, falling back to 1 default profile: "default"
+2023-Nov-13 23:11:46 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - Started DemoLoggingUsingDefaultLoggerApplication in 1.084 seconds (JVM running for 1.742)
+2023-Nov-13 23:11:46 pm [main] ERROR com.infy.bean.Customer - Customer not registered
+com.infy.exception.InfyTelException: Customer not registered
+	at com.infy.bean.Customer.register(Customer.java:23)
+	at com.infy.DemoLoggingUsingDefaultLoggerApplication.main(DemoLoggingUsingDefaultLoggerApplication.java:24)
+2023-Nov-13 23:11:46 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - Sorry! Some exception occured ! Please chek log file
+2023-Nov-13 23:14:28 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - Starting DemoLoggingUsingDefaultLoggerApplication using Java 17.0.8.1 on LAPTOP-MDQPDAAT with PID 14732 (C:\Users\Shailee Kumari\Documents\workspace-spring-tool-suite-4-4.20.0.RELEASE\Demo_LoggingUsingDefaultLogger\target\classes started by Shailee Kumari in C:\Users\Shailee Kumari\Documents\workspace-spring-tool-suite-4-4.20.0.RELEASE\Demo_LoggingUsingDefaultLogger)
+2023-Nov-13 23:14:28 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - No active profile set, falling back to 1 default profile: "default"
+2023-Nov-13 23:14:28 pm [main] WARN  o.s.c.a.AnnotationConfigApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'customer': Unsatisfied dependency expressed through field 'plan'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.infy.bean.Plan' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true), @org.springframework.beans.factory.annotation.Qualifier("prepaid")}
+2023-Nov-13 23:14:28 pm [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-Nov-13 23:14:28 pm [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field plan in com.infy.bean.Customer required a bean of type 'com.infy.bean.Plan' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+	- @org.springframework.beans.factory.annotation.Qualifier("prepaid")
+
+The following candidates were found but could not be injected:
+	- User-defined bean
+	- User-defined bean
+
+
+Action:
+
+Consider revisiting the entries above or defining a bean of type 'com.infy.bean.Plan' in your configuration.
+
+2023-Nov-13 23:14:58 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - Starting DemoLoggingUsingDefaultLoggerApplication using Java 17.0.8.1 on LAPTOP-MDQPDAAT with PID 8868 (C:\Users\Shailee Kumari\Documents\workspace-spring-tool-suite-4-4.20.0.RELEASE\Demo_LoggingUsingDefaultLogger\target\classes started by Shailee Kumari in C:\Users\Shailee Kumari\Documents\workspace-spring-tool-suite-4-4.20.0.RELEASE\Demo_LoggingUsingDefaultLogger)
+2023-Nov-13 23:14:58 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - No active profile set, falling back to 1 default profile: "default"
+2023-Nov-13 23:14:59 pm [main] WARN  o.s.c.a.AnnotationConfigApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'customer': Unsatisfied dependency expressed through field 'plan'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.infy.bean.Plan' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true), @org.springframework.beans.factory.annotation.Qualifier("prepaid")}
+2023-Nov-13 23:14:59 pm [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-Nov-13 23:14:59 pm [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field plan in com.infy.bean.Customer required a bean of type 'com.infy.bean.Plan' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+	- @org.springframework.beans.factory.annotation.Qualifier("prepaid")
+
+The following candidates were found but could not be injected:
+	- User-defined bean
+	- User-defined bean
+
+
+Action:
+
+Consider revisiting the entries above or defining a bean of type 'com.infy.bean.Plan' in your configuration.
+
+2023-Nov-13 23:17:29 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - Starting DemoLoggingUsingDefaultLoggerApplication using Java 17.0.8.1 on LAPTOP-MDQPDAAT with PID 1532 (C:\Users\Shailee Kumari\Documents\workspace-spring-tool-suite-4-4.20.0.RELEASE\Demo_LoggingUsingDefaultLogger\target\classes started by Shailee Kumari in C:\Users\Shailee Kumari\Documents\workspace-spring-tool-suite-4-4.20.0.RELEASE\Demo_LoggingUsingDefaultLogger)
+2023-Nov-13 23:17:29 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - No active profile set, falling back to 1 default profile: "default"
+2023-Nov-13 23:17:29 pm [main] WARN  o.s.c.a.AnnotationConfigApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'customer': Unsatisfied dependency expressed through field 'plan'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.infy.bean.Plan' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true), @org.springframework.beans.factory.annotation.Qualifier("prepaid")}
+2023-Nov-13 23:17:29 pm [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-Nov-13 23:17:29 pm [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field plan in com.infy.bean.Customer required a bean of type 'com.infy.bean.Plan' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+	- @org.springframework.beans.factory.annotation.Qualifier("prepaid")
+
+The following candidates were found but could not be injected:
+	- User-defined bean
+	- User-defined bean
+
+
+Action:
+
+Consider revisiting the entries above or defining a bean of type 'com.infy.bean.Plan' in your configuration.
+
+2023-Nov-13 23:18:48 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - Starting DemoLoggingUsingDefaultLoggerApplication using Java 17.0.8.1 on LAPTOP-MDQPDAAT with PID 8220 (C:\Users\Shailee Kumari\Documents\workspace-spring-tool-suite-4-4.20.0.RELEASE\Demo_LoggingUsingDefaultLogger\target\classes started by Shailee Kumari in C:\Users\Shailee Kumari\Documents\workspace-spring-tool-suite-4-4.20.0.RELEASE\Demo_LoggingUsingDefaultLogger)
+2023-Nov-13 23:18:48 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - No active profile set, falling back to 1 default profile: "default"
+2023-Nov-13 23:18:49 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - Started DemoLoggingUsingDefaultLoggerApplication in 0.877 seconds (JVM running for 1.662)
+2023-Nov-13 23:18:49 pm [main] ERROR com.infy.bean.Customer - Customer not registered
+com.infy.exception.InfyTelException: Customer not registered
+	at com.infy.bean.Customer.register(Customer.java:24)
+	at com.infy.DemoLoggingUsingDefaultLoggerApplication.main(DemoLoggingUsingDefaultLoggerApplication.java:24)
+2023-Nov-13 23:18:49 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - Sorry! Some exception occured ! Please chek log file
+2023-Nov-13 23:20:22 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - Starting DemoLoggingUsingDefaultLoggerApplication using Java 17.0.8.1 on LAPTOP-MDQPDAAT with PID 11972 (C:\Users\Shailee Kumari\Documents\workspace-spring-tool-suite-4-4.20.0.RELEASE\Demo_LoggingUsingDefaultLogger\target\classes started by Shailee Kumari in C:\Users\Shailee Kumari\Documents\workspace-spring-tool-suite-4-4.20.0.RELEASE\Demo_LoggingUsingDefaultLogger)
+2023-Nov-13 23:20:22 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - No active profile set, falling back to 1 default profile: "default"
+2023-Nov-13 23:20:22 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - Started DemoLoggingUsingDefaultLoggerApplication in 0.94 seconds (JVM running for 1.741)
+2023-Nov-13 23:20:22 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - Customer enrolled to plan
+2023-Nov-13 23:26:03 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - Starting DemoLoggingUsingDefaultLoggerApplication using Java 17.0.8.1 on LAPTOP-MDQPDAAT with PID 23880 (C:\Users\Shailee Kumari\Documents\workspace-spring-tool-suite-4-4.20.0.RELEASE\Demo_LoggingUsingDefaultLogger\target\classes started by Shailee Kumari in C:\Users\Shailee Kumari\Documents\workspace-spring-tool-suite-4-4.20.0.RELEASE\Demo_LoggingUsingDefaultLogger)
+2023-Nov-13 23:26:03 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - No active profile set, falling back to 1 default profile: "default"
+2023-Nov-13 23:26:04 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - Started DemoLoggingUsingDefaultLoggerApplication in 0.985 seconds (JVM running for 2.187)
+2023-Nov-13 23:26:04 pm [main] ERROR com.infy.bean.Customer - Customer not registered
+com.infy.exception.InfyTelException: Customer not registered
+	at com.infy.bean.Customer.register(Customer.java:24)
+	at com.infy.DemoLoggingUsingDefaultLoggerApplication.main(DemoLoggingUsingDefaultLoggerApplication.java:24)
+2023-Nov-13 23:26:04 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - Sorry! Some exception occured ! Please chek log file
+2023-Nov-13 23:32:47 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - Starting DemoLoggingUsingDefaultLoggerApplication using Java 17.0.8.1 on LAPTOP-MDQPDAAT with PID 4804 (C:\Users\Shailee Kumari\Documents\workspace-spring-tool-suite-4-4.20.0.RELEASE\Demo_LoggingUsingDefaultLogger\target\classes started by Shailee Kumari in C:\Users\Shailee Kumari\Documents\workspace-spring-tool-suite-4-4.20.0.RELEASE\Demo_LoggingUsingDefaultLogger)
+2023-Nov-13 23:32:47 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - No active profile set, falling back to 1 default profile: "default"
+2023-Nov-13 23:32:47 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - Started DemoLoggingUsingDefaultLoggerApplication in 0.9 seconds (JVM running for 1.565)
+2023-Nov-13 23:32:47 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - Customer enrolled to plan
+2023-Nov-13 23:32:54 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - Starting DemoLoggingUsingDefaultLoggerApplication using Java 17.0.8.1 on LAPTOP-MDQPDAAT with PID 25736 (C:\Users\Shailee Kumari\Documents\workspace-spring-tool-suite-4-4.20.0.RELEASE\Demo_LoggingUsingDefaultLogger\target\classes started by Shailee Kumari in C:\Users\Shailee Kumari\Documents\workspace-spring-tool-suite-4-4.20.0.RELEASE\Demo_LoggingUsingDefaultLogger)
+2023-Nov-13 23:32:54 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - No active profile set, falling back to 1 default profile: "default"
+2023-Nov-13 23:32:54 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - Started DemoLoggingUsingDefaultLoggerApplication in 0.8 seconds (JVM running for 1.481)
+2023-Nov-13 23:32:54 pm [main] ERROR com.infy.bean.Customer - Customer not registered
+com.infy.exception.InfyTelException: Customer not registered
+	at com.infy.bean.Customer.register(Customer.java:24)
+	at com.infy.DemoLoggingUsingDefaultLoggerApplication.main(DemoLoggingUsingDefaultLoggerApplication.java:24)
+2023-Nov-13 23:32:54 pm [main] INFO  c.i.DemoLoggingUsingDefaultLoggerApplication - Sorry! Some exception occured ! Please chek log file
