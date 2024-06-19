@@ -19,7 +19,7 @@ public class CustomerServiceImpl implements CustomerService{
 	private CustomerRepository repository;
 	
 	@Override
-	public List<CustomerDTO> getAllCustomer() {
+	public List<CustomerDTO> getAllCustomer() throws InfyBankException{
 		List<Customer> customers = repository.findAll();
 		List<CustomerDTO> list = new ArrayList<>();
 		customers.forEach(customer -> {
@@ -31,7 +31,8 @@ public class CustomerServiceImpl implements CustomerService{
 			
 			list.add(cust);
 		});
-		//Exception
+		if (list.isEmpty())
+			throw new InfyBankException("Service.CUSTOMERS_NOT_FOUND");
 		return list;
 	}
 
@@ -51,7 +52,7 @@ public class CustomerServiceImpl implements CustomerService{
 	}
 
 	@Override
-	public Integer addCustomer(CustomerDTO customer) {
+	public Integer addCustomer(CustomerDTO customer) throws InfyBankException{
 		
 		Customer cust= new Customer();
 		
@@ -69,7 +70,7 @@ public class CustomerServiceImpl implements CustomerService{
 	public void updateCustomer(Integer id, String email) throws InfyBankException {
 		
 		Optional<Customer> optional = repository.findById(id);
-		Customer customer = optional.orElseThrow(()-> new InfyBankException("API.UPDATE_SUCCESS"));
+		Customer customer = optional.orElseThrow(()-> new InfyBankException("Service.CUSTOMER_NOT_FOUND"));
 		customer.setEmail(email);
 		repository.save(customer);
 	}
@@ -77,7 +78,7 @@ public class CustomerServiceImpl implements CustomerService{
 	@Override
 	public void deleteCustomer(Integer id) throws InfyBankException{
 		Optional<Customer> optional = repository.findById(id);
-		Customer customer = optional.orElseThrow(()-> new InfyBankException("API.DELETE_SUCCESS"));
+		Customer customer = optional.orElseThrow(()-> new InfyBankException("Service.CUSTOMER_NOT_FOUND"));
 		
 		repository.deleteById(customer.getCustomerId());
 	}

@@ -26,6 +26,7 @@ public class CustomerController {
 	@Autowired
 	private CustomerService customerService;
 	
+	@Autowired
 	private Environment environment;
 	
 	@GetMapping("/customers")
@@ -60,4 +61,19 @@ public class CustomerController {
 		String deleteMessage = environment.getProperty("API.DELETE_SUCCESS") + customerId;
 		return new ResponseEntity<String>(deleteMessage, HttpStatus.OK);
 	}
+	
+	//ResponseStatusException
+	/*
+	 * @DeleteMapping(value = "/customers/{customerId}")
+	public ResponseEntity<String> deleteCustomer(@PathVariable Integer customerId) throws InfyBankException {
+		try {
+			customerService.deleteCustomer(customerId);
+			String successMessage = environment.getProperty("API.DELETE_SUCCESS");
+			return new ResponseEntity<>(successMessage, HttpStatus.OK);
+		} catch (Exception exception) {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, environment.getProperty(exception.getMessage()), exception);
+		}
+	}*/
+	
+	
 }
