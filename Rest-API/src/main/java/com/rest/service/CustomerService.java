@@ -3,6 +3,7 @@ package com.rest.service;
 import java.util.List;
 
 import com.rest.dto.CustomerDTO;
+import com.rest.exception.InfyBankException;
 
 public interface CustomerService {
 	
@@ -13,13 +14,13 @@ public interface CustomerService {
 //	updateCustomer 
 //	deleteCustomer 
 	
-	public List<CustomerDTO> getAllCustomer();
+	public List<CustomerDTO> getAllCustomer() throws InfyBankException;
 	
-	public CustomerDTO getCustomerById(Integer id) throws Exception;
+	public CustomerDTO getCustomerById(Integer id) throws InfyBankException;
 	
-	public Integer addCustomer(CustomerDTO customer);
+	public Integer addCustomer(CustomerDTO customer) throws InfyBankException;
 	
-	public void updateCustomer(Integer id, String email) throws Exception;
+	public void updateCustomer(Integer id, String email) throws InfyBankException;
 	
-	public void deleteCustomer(Integer id)throws Exception;
+	public void deleteCustomer(Integer id)throws InfyBankException;
 }

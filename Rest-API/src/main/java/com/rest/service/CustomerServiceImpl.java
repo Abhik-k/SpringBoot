@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.rest.dto.CustomerDTO;
 import com.rest.entity.Customer;
+import com.rest.exception.InfyBankException;
 import com.rest.repository.CustomerRepository;
 
 @Service
@@ -35,10 +36,10 @@ public class CustomerServiceImpl implements CustomerService{
 	}
 
 	@Override
-	public CustomerDTO getCustomerById(Integer id) throws Exception {
+	public CustomerDTO getCustomerById(Integer id) throws InfyBankException {
 		
 		Optional<Customer> optional = repository.findById(id);
-		Customer customer = optional.orElseThrow(()-> new Exception("NOT Found"));
+		Customer customer = optional.orElseThrow(()-> new InfyBankException("Service.CUSTOMER_NOT_FOUND"));
 		
 		CustomerDTO cust = new CustomerDTO();
 		cust.setCustomerId(customer.getCustomerId());
@@ -65,18 +66,18 @@ public class CustomerServiceImpl implements CustomerService{
 	}
 
 	@Override
-	public void updateCustomer(Integer id, String email) throws Exception {
+	public void updateCustomer(Integer id, String email) throws InfyBankException {
 		
 		Optional<Customer> optional = repository.findById(id);
-		Customer customer = optional.orElseThrow(()-> new Exception("NOT Found"));
+		Customer customer = optional.orElseThrow(()-> new InfyBankException("API.UPDATE_SUCCESS"));
 		customer.setEmail(email);
 		repository.save(customer);
 	}
 
 	@Override
-	public void deleteCustomer(Integer id) throws Exception{
+	public void deleteCustomer(Integer id) throws InfyBankException{
 		Optional<Customer> optional = repository.findById(id);
-		Customer customer = optional.orElseThrow(()-> new Exception("NOT Found"));
+		Customer customer = optional.orElseThrow(()-> new InfyBankException("API.DELETE_SUCCESS"));
 		
 		repository.deleteById(customer.getCustomerId());
 	}
