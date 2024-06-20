@@ -54,6 +54,11 @@ public class CustomerServiceImpl implements CustomerService{
 	@Override
 	public Integer addCustomer(CustomerDTO customer) throws InfyBankException{
 		
+//		List<Customer> custum = repository.findByEmail(customer.getEmail());
+//		System.out.println(custum);
+		
+//		if(custum.isEmpty()) {
+		
 		Customer cust= new Customer();
 		
 		cust.setCustomerId(customer.getCustomerId());
@@ -63,7 +68,11 @@ public class CustomerServiceImpl implements CustomerService{
 		
 		Customer customerEntity = repository.save(cust);
 		
+		
 		return customerEntity.getCustomerId();
+//		}
+//		
+//		return null;
 	}
 
 	@Override

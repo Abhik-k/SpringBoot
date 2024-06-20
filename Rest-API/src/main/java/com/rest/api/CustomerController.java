@@ -19,6 +19,8 @@ import com.rest.dto.CustomerDTO;
 import com.rest.exception.InfyBankException;
 import com.rest.service.CustomerService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api")
 public class CustomerController {
@@ -40,7 +42,7 @@ public class CustomerController {
 	}
 	
 	@PostMapping("/customers")
-	public ResponseEntity<String> addCustomer(@RequestBody CustomerDTO customer)throws InfyBankException{
+	public ResponseEntity<String> addCustomer(@Valid @RequestBody CustomerDTO customer)throws InfyBankException{
 		Integer customerId = customerService.addCustomer(customer);
 		String successMessage = environment.getProperty("API.INSERT_SUCCESS") + customerId;
 		return new ResponseEntity<>(successMessage,HttpStatus.CREATED);

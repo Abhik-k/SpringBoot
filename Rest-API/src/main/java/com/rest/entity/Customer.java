@@ -4,6 +4,8 @@ import java.time.LocalDate;
 
 import com.rest.dto.CustomerDTO;
 
+import jakarta.persistence.Column;
+
 //import com.rest.dto.CustomerDTO;
 
 import jakarta.persistence.Entity;
@@ -28,7 +30,10 @@ public class Customer {
 	private Integer customerId;
 	
 	private String name;
+	
+	@Column(unique = true, nullable = false)
 	private String email;
+	
 	private LocalDate dob;
 	
 	
