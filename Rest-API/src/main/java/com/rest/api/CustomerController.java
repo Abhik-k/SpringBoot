@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,9 +21,12 @@ import com.rest.exception.InfyBankException;
 import com.rest.service.CustomerService;
 
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 
 @RestController
 @RequestMapping("/api")
+@Validated
 public class CustomerController {
 	
 	@Autowired
@@ -37,7 +41,7 @@ public class CustomerController {
 	}
 	
 	@GetMapping("/customers/{customerId}")
-	public ResponseEntity<CustomerDTO> getCustomerById(@PathVariable Integer customerId) throws InfyBankException{
+	public ResponseEntity<CustomerDTO> getCustomerById(@PathVariable @Min(value = 1,message = "Customer id should be between 1 and 100") @Max(value=100,message="Customer id should be between 1 and 100")  Integer customerId) throws InfyBankException{
 		return new ResponseEntity<>(customerService.getCustomerById(customerId),HttpStatus.OK);
 	}
 	

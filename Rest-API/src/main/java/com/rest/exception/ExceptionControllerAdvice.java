@@ -12,6 +12,8 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import jakarta.validation.ConstraintViolationException;
+
 @RestControllerAdvice
 public class ExceptionControllerAdvice {
 	
@@ -52,6 +54,18 @@ public class ExceptionControllerAdvice {
 			
 			error.setErrorMessage(errorMsg);
 			
+			
+			return new ResponseEntity<ErrorInfo>(error,HttpStatus.BAD_REQUEST);
+		}
+		
+		@ExceptionHandler(ConstraintViolationException.class)
+		public ResponseEntity<ErrorInfo> exceptionHandler(ConstraintViolationException exception){
+			ErrorInfo error=new ErrorInfo();
+			error.setErrorCode(HttpStatus.BAD_REQUEST.value());
+			error.setTimestamp(LocalDateTime.now());
+			
+			String errorMsg = exception.getConstraintViolations().stream().map(x->x.getMessage()).collect(Collectors.joining(","));
+			error.setErrorMessage(errorMsg);
 			
 			return new ResponseEntity<ErrorInfo>(error,HttpStatus.BAD_REQUEST);
 		}
