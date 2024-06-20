@@ -2,6 +2,7 @@ package com.rest.entity;
 
 import java.time.LocalDate;
 
+
 import com.rest.dto.CustomerDTO;
 
 import jakarta.persistence.Column;
@@ -12,11 +13,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+
 
 @Entity
 @AllArgsConstructor
@@ -36,6 +40,9 @@ public class Customer {
 	
 	private LocalDate dob;
 	
+	@OneToOne(cascade = jakarta.persistence.CascadeType.ALL)
+	@JoinColumn(name="address_id",unique=true)
+	private Address address;
 	
 	@Override
 	public int hashCode() {

@@ -42,7 +42,7 @@ public class CustomerController {
 	}
 	
 	@PostMapping("/customers")
-	public ResponseEntity<String> addCustomer(@Valid @RequestBody CustomerDTO customer)throws InfyBankException{
+	public ResponseEntity<String> addCustomer(@Valid @RequestBody CustomerDTO customer)throws Exception{
 		Integer customerId = customerService.addCustomer(customer);
 		String successMessage = environment.getProperty("API.INSERT_SUCCESS") + customerId;
 		return new ResponseEntity<>(successMessage,HttpStatus.CREATED);
