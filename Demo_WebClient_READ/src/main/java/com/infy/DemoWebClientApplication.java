@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.reactive.function.client.WebClient;
 
+import com.infy.dto.AddressDTO;
 import com.infy.dto.CustomerDTO;
 
 @SpringBootApplication
@@ -23,6 +24,20 @@ public class DemoWebClientApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		 
 		getCustomerDetails(2);
+		
+		CustomerDTO customer = new CustomerDTO();
+//		customer.setCustomerId(7);
+		customer.setEmail("raju@gmail.com");
+		customer.setName("Raj Aryan");
+		
+		AddressDTO address = new AddressDTO();
+//		address.setAddressId(6);
+		address.setCity("Pune");
+		address.setStreet("Phase-1");
+		
+		customer.setAddressDTO(address);
+		
+		addCustomer(customer);
 
 	}
 
@@ -32,6 +47,15 @@ public class DemoWebClientApplication implements CommandLineRunner {
 		WebClient webClient = WebClient.create();
 		CustomerDTO customerDTO = webClient.get().uri(url, customerId).retrieve().bodyToMono(CustomerDTO.class).block();
 		LOGGER.info(customerDTO);
+		LOGGER.info("\n");
+	}
+	
+	public void addCustomer(CustomerDTO customer) {
+		String url="http://localhost:8080/api/customers";
+		WebClient webClient = WebClient.create();
+		
+		String response = webClient.post().uri(url).bodyValue(customer).retrieve().bodyToMono(String.class).block();
+		LOGGER.info(response);
 		LOGGER.info("\n");
 	}
 
