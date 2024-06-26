@@ -24,20 +24,22 @@ public class DemoWebClientApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		 
 		getCustomerDetails(2);
-		
+		getCustomerDetails(10);
 		CustomerDTO customer = new CustomerDTO();
-//		customer.setCustomerId(7);
-		customer.setEmail("raju@gmail.com");
+		customer.setCustomerId(10);
+		customer.setEmail("rajessadh@gmail.com");
 		customer.setName("Raj Aryan");
 		
 		AddressDTO address = new AddressDTO();
-//		address.setAddressId(6);
+		address.setAddressId(5);
 		address.setCity("Pune");
 		address.setStreet("Phase-1");
 		
 		customer.setAddressDTO(address);
 		
-		addCustomer(customer);
+//		addCustomer(customer);
+		
+		updateCustomer(customer);
 
 	}
 
@@ -50,11 +52,26 @@ public class DemoWebClientApplication implements CommandLineRunner {
 		LOGGER.info("\n");
 	}
 	
-	public void addCustomer(CustomerDTO customer) {
-		String url="http://localhost:8080/api/customers";
+//	public void addCustomer(CustomerDTO customer) {
+//		String url="http://localhost:8080/api/customers";
+//		WebClient webClient = WebClient.create();
+//		
+//		String response = webClient.post().uri(url).bodyValue(customer).retrieve().bodyToMono(String.class).block();
+//		LOGGER.info(response);
+//		LOGGER.info("\n");
+//	}
+	
+	public void updateCustomer(CustomerDTO customer) {
+		String url="http://localhost:8080/api/customers/{customerId}";
 		WebClient webClient = WebClient.create();
 		
-		String response = webClient.post().uri(url).bodyValue(customer).retrieve().bodyToMono(String.class).block();
+		String response = webClient.put()
+					.uri(url,customer.getCustomerId())
+					.bodyValue(customer)
+					.retrieve()
+					.bodyToMono(String.class)
+					.block();
+		
 		LOGGER.info(response);
 		LOGGER.info("\n");
 	}
