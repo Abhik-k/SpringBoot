@@ -24,23 +24,26 @@ public class DemoWebClientApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		 
 		getCustomerDetails(2);
-		getCustomerDetails(10);
-		CustomerDTO customer = new CustomerDTO();
-		customer.setCustomerId(10);
-		customer.setEmail("rajessadh@gmail.com");
-		customer.setName("Raj Aryan");
+		getCustomerDetails(11);
 		
-		AddressDTO address = new AddressDTO();
-		address.setAddressId(5);
-		address.setCity("Pune");
-		address.setStreet("Phase-1");
-		
-		customer.setAddressDTO(address);
+//		CustomerDTO customer = new CustomerDTO();
+//		customer.setCustomerId(10);
+//		customer.setEmail("rajessadh@gmail.com");
+//		customer.setName("Raj Aryan");
+//		
+//		AddressDTO address = new AddressDTO();
+//		address.setAddressId(5);
+//		address.setCity("Pune");
+//		address.setStreet("Phase-1");
+//		
+//		customer.setAddressDTO(address);
 		
 //		addCustomer(customer);
 		
-		updateCustomer(customer);
-
+//		updateCustomer(customer);
+		
+		deleteCustomer(11);
+		
 	}
 
 	public void getCustomerDetails(Integer customerId) {
@@ -61,19 +64,37 @@ public class DemoWebClientApplication implements CommandLineRunner {
 //		LOGGER.info("\n");
 //	}
 	
-	public void updateCustomer(CustomerDTO customer) {
+//	public void updateCustomer(CustomerDTO customer) {
+//		String url="http://localhost:8080/api/customers/{customerId}";
+//		WebClient webClient = WebClient.create();
+//		
+//		String response = webClient.put()
+//					.uri(url,customer.getCustomerId())
+//					.bodyValue(customer)
+//					.retrieve()
+//					.bodyToMono(String.class)
+//					.block();
+//		
+//		LOGGER.info(response);
+//		LOGGER.info("\n");
+//	}
+	
+	public void deleteCustomer(Integer customerId) {
 		String url="http://localhost:8080/api/customers/{customerId}";
 		WebClient webClient = WebClient.create();
-		
-		String response = webClient.put()
-					.uri(url,customer.getCustomerId())
-					.bodyValue(customer)
-					.retrieve()
-					.bodyToMono(String.class)
-					.block();
-		
-		LOGGER.info(response);
-		LOGGER.info("\n");
+		webClient.delete()
+					.uri(url,customerId)
+					.exchange() //equivalent to retrive method to receive response body but gives more control to access the response
+					.subscribe(
+							response->{
+								if(response.statusCode().value()==200) {
+									LOGGER.info("Customer deleted Successfully");
+								}
+								else {
+									LOGGER.info("Failed to delete Customer");
+								}
+							});
+					
 	}
 
 }
